@@ -1,0 +1,36 @@
+(defwidget toggles []
+  (box
+    :class        "toggles"
+    :orientation  "h"
+    :spacing      8
+    :space-evenly true
+    (button
+      :onclick      {wifi_state == "disabled"
+                      ? "nmcli radio wifi on &"
+                      : "nmcli radio wifi off &"}
+      :onrightclick "env XDG_CURRENT_DESKTOP=GNOME gnome-control-center wifi &"
+      :class        { "wifi-toggle " + (wifi_state == "disabled" ? "off" : "on")}
+    (label
+      :class "wifi-icon"
+      :text wifi_icon
+      )
+    )
+    (button
+      :class        { "bluetooth-toggle " + (bluetooth_state == "on" ? "on" : "off")}
+      :onclick      "rfkill list bluetooth | grep -q 'Soft blocked: yes' && rfkill unblock bluetooth || rfkill block bluetooth"
+      :onrightclick "env XDG_CURRENT_DESKTOP=GNOME gnome-control-center bluetooth &"
+      (label
+        :class "bluetooth-icon"
+        :text  {bluetooth_state == "on" ? "" : ""}
+      )
+    )
+    (button
+      :class   { "bluelight-toggle " + (bluelight_state == "on" ? "on" : "off")}
+      :onclick "sh ~/.config/eww/scripts/bluelight.sh --toggle"
+      (label
+        :class "bluelight-icon"
+        :text  {bluelight_state == "on" ? "" : ""}
+      )
+    )
+  )
+)

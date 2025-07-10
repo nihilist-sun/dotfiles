@@ -1,0 +1,60 @@
+{
+    "security.workspace.trust.untrustedFiles": "open",
+    "gitlens.launchpad.indicator.enabled": false,
+    "editor.minimap.enabled": false,
+    "security.workspace.trust.enabled": false,
+    "workbench.startupEditor": "none",
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "'Liga SFMono Nerd Font', 'FiraCode Nerd Font', 'Font Awesome 6 Pro Solid'",
+    "editor.wordWrap": "on",
+    "window.controlsStyle": "hidden",
+    "workbench.settings.editor": "ui",
+    "chat.commandCenter.enabled": false,
+    "gruvboxMaterial.darkCursor": "green",
+    "gruvboxMaterial.darkSelection": "purple",
+    "apc.electron": {
+        "frame": false
+    },
+    "gruvboxMaterial.darkWorkbench": "flat",
+    "gruvboxMaterial.darkPalette": "mix",
+    "workbench.colorTheme": "Gruvbox Material Dark",
+    "gruvboxMaterial.darkContrast": "hard",
+    "workbench.colorCustomizations": {
+        "[Gruvbox Material Dark]": {
+            "activityBar.background": "#141617",
+            "activityBar.foreground": "#89b482",
+            "activityBar.border": "#141617",
+            "titleBar.activeBackground": "#141617",
+            "titleBar.inactiveBackground": "#141617",
+            "titleBar.border": "#141617",
+            "editor.background": "#141617",
+            "editorGroupHeader.tabsBackground": "#141617",
+            "tab.activeBackground": "#333e34",
+            "tab.inactiveBackground": "#282828",
+            "tab.border": "#141617",
+            "tab.activeBorderTop": "#333e34",
+            "tab.activeBorder": "#333e34",
+            "editorGroupHeader.noTabsBackground": "#141617",
+            "scrollbar.shadow": "#00000000",
+            "panel.background": "#1d2021",
+            "panel.border": "#1d2021",
+            "sideBar.background": "#282828"
+        }
+    },
+    "workbench.statusBar.visible": false,
+    "zenMode.showTabs": "single",
+    "editor.stickyScroll.enabled": false,
+    "workbench.editor.showTabs": "single",
+    "breadcrumbs.enabled": false,
+    "editor.fontSize": 16,
+    "color-highlight.markerType": "dot-before",
+    "editor.colorDecorators": false,
+    "workbench.navigationControl.enabled": false,
+    "window.menuStyle": "custom",
+    "workbench.activityBar.location": "hidden",
+    "window.commandCenter": false,
+    "workbench.layoutControl.enabled": false
+}

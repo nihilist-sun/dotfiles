@@ -1,0 +1,44 @@
+(defwidget weather []
+  (box
+    :class "weather-container"
+      (box
+        :valign "center"
+        :halign "center"
+        :space-evenly false
+        :spacing 16
+        (box
+          :class "weather-temp"
+          :spacing 4
+          :space-evenly false
+          (image
+            :path weather_icon
+            :image-height 16
+          )
+          (label
+            :class "weather-temp-val"
+            :text weather_temp
+          )
+        )
+        (box
+          :class "weather-humidity"
+          :space-evenly false
+          :spacing 4
+          (image
+            :path weather_humicon
+            :image-height 16
+          )
+          (label
+            :class "weather-humid-val"
+            :text weather_humidity
+          )
+        (box
+          :class "weather-moon"
+          (label
+            :class "weather-moon-bar"
+            :markup weather_moon
+          )
+        )
+      )
+    )
+  )
+)

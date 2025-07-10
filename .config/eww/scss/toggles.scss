@@ -1,0 +1,41 @@
+.toggles {
+  background-color: #141617;
+  padding: 0 0 24px 0;
+}
+
+.wifi-toggle,
+.bluetooth-toggle,
+.bluelight-toggle {
+  font-size: 24px;
+  border-radius: 8px;
+  min-height: 48px;
+  min-width: 104px;
+}
+
+.wifi-toggle.on,
+.bluetooth-toggle.on,
+.bluelight-toggle.on {
+  background-color: #333e34;
+  color: #8bba7f;
+}
+
+.wifi-toggle.off,
+.bluetooth-toggle.off,
+.bluelight-toggle.off {
+  background-color: #1d2021;
+  color: #3c3836;
+}
+
+.wifi-toggle.on:hover,
+.bluetooth-toggle.on:hover,
+.bluelight-toggle.on:hover {
+  background-color: #282828;
+  color: #3c3836
+}
+
+.wifi-toggle.off:hover,
+.bluetooth-toggle.off:hover,
+.bluelight-toggle.off:hover {
+  background-color: #282828;
+  color: #8bba7f
+}

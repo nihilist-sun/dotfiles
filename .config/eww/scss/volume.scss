@@ -1,0 +1,39 @@
+.volume-container {
+  background-color: #1d2021;
+  border-radius: 8px;
+  min-height: 40px;
+  margin-top: 16px;
+}
+
+.volume-icon {
+  margin: 0 4px 0 16px;
+  min-width: 20px;
+}
+
+.volume-container button {
+  color: #d4be98;
+}
+
+.volume-container button:hover {
+  color: #504945;
+}
+
+.volume-slider trough {
+  background-color: #141617;
+  border-radius: 4px;
+  min-height: 8px;
+  min-width: 256px;
+  margin: 0 16px 0 4px;
+}
+
+.volume-slider highlight {
+  background-color: #2e3b3b;
+  border-radius: 4px;
+}
+
+.volume-slider slider {
+  background-color: #d4be98;
+  border-radius: 100px;
+  min-width: 16px;
+  margin: -8px 0;
+}

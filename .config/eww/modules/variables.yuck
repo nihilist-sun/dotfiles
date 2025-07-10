@@ -1,0 +1,87 @@
+(defpoll network
+  :initial "{\"essid\":\"lo\",\"signal\":0}"
+  :interval "10s"
+  "nmcli -t -f active,ssid,signal dev wifi | awk -F: '/^yes/ {print \"{\\\"essid\\\": \\\"\" \$2 \"\\\", \\\"signal\\\": \" \$3 \"}\"}' || echo '{\"essid\":\"lo\",\"signal\":0}'")
+
+(defpoll wifi_state
+  :interval "200ms"
+  "nmcli radio wifi | grep -oE 'enabled|disabled'")
+
+(defpoll bluetooth_state
+  :interval "200ms"
+  "rfkill list bluetooth \
+| grep -q 'Soft blocked: no' && echo 'on' || echo 'off'")
+
+(defpoll bluelight_state
+  :interval "200ms"
+  "sh ~/.config/eww/scripts/bluelight.sh --status")
+
+(defpoll volume_level
+  :interval "200ms"
+  "pactl get-sink-volume @DEFAULT_SINK@ \
+| grep -Po '\\d+%' | head -1 | tr -d '%' || echo 0")
+
+(defpoll volume_muted
+  :interval "200ms"
+  "pactl get-sink-mute @DEFAULT_SINK@ \
+| grep -q 'yes' && echo yes || echo no")
+
+(defpoll spotify_artUrl
+  :interval "200ms"
+  "~/.config/eww/scripts/get-spotify-info.sh | jq -r .artUrl")
+
+(deflisten spotify_artist
+  :initial ""
+  "playerctl -p spotify --follow metadata --format '{{artist}}'")
+
+(deflisten spotify_title
+  :initial ""
+  "playerctl -p spotify --follow metadata --format '{{title}}'")
+
+(deflisten spotify_shuffle
+  :initial "Off"
+  "playerctl -p spotify --follow shuffle")
+
+(defpoll spotify_status
+  :interval "1s"
+  "~/.config/eww/scripts/get-spotify-info.sh | jq -r .status")
+
+(defpoll spotify_timeline
+  :interval "1s"
+  "~/.config/eww/scripts/get-spotify-info.sh | jq -r .timeline")
+
+(defpoll spotify_running
+  :interval "1s"
+  `pgrep -x spotify || echo ""`)
+
+(defpoll weather_temp
+  :interval "10m"
+  "~/.config/eww/scripts/weather.sh temp")
+
+(defpoll weather_icon
+  :interval "10m"
+  "~/.config/eww/scripts/weather.sh icon")
+
+(defpoll weather_humidity
+  :interval "10m"
+  "~/.config/eww/scripts/weather.sh humidity")
+
+(defpoll weather_humicon
+  :interval "10m"
+  "~/.config/eww/scripts/weather.sh humicon")
+
+(defpoll weather_moon
+  :interval "12h"
+  "~/.config/eww/scripts/weather.sh moon")
+
+(defpoll time
+  :interval "1s"
+  "date '+%-I:%M'")
+
+(defpoll date
+  :interval "1m"
+  "date '+%A, %B %-d'")
+
+(defpoll wifi_icon
+  :interval "1s"
+  "~/.config/eww/scripts/wifi.sh")

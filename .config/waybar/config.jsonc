@@ -1,0 +1,119 @@
+{
+  "layer": "top",
+  "height": 48,
+  "spacing": 8,
+
+  "modules-left": [
+    "niri/workspaces",
+    "custom/menu",
+    "custom/media"
+  ],
+
+  "modules-center": [
+    "niri/window"
+  ],
+
+  "modules-right": [
+    "cpu",
+    "memory",
+    "group/net-volume",
+    "group/tray-toggle"
+  ],
+
+  "custom/media": {
+    "format": "{icon} {text}",
+    "return-type": "json",
+    "max-length": 50,
+    "exec": "$HOME/.config/waybar/mediaplayer.py --exclude firefox 2> /dev/null",
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous",
+    "format-icons": {
+    "spotify": "<span color='#89b482'></span>"
+    }
+  },
+
+  "custom/menu": {
+    "format": "<span color='#80aa9e'></span>",
+    "on-click": "fuzzel --config ~/.config/fuzzel/fuzzel-alt.ini",
+    "tooltip": false
+  }, 
+
+  "niri/window": {
+    "format": "<span weight='600'>{}</span>",
+    "max-length": 60
+  },
+
+  "niri/workspaces": {
+  "format": "{icon}",
+  "format-icons": {
+  "default": "<span font='Font Awesome 6 Pro Regular'></span>",
+  "active": "<span font='Font Awesome 6 Pro Solid'></span>"
+  },
+  "on-click": "activate"
+},
+
+  "cpu": {
+    "format": "{icon} {usage}%",
+    "format-icons": [
+      "<span color='#ea6962'></span>"
+    ]
+  },
+
+  "memory": {
+    "format": "{icon} {percentage}%",
+    "format-icons": [
+      "<span color='#d3869b'></span>"
+    ]
+  },
+
+  "group/tray-toggle": {
+    "modules": ["clock", "tray"],
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 400,
+      "reveal-on-hover": true,
+      "transition-left-to-right": false
+    }
+  },
+
+  "tray": {
+    "spacing": 16
+  },
+  
+"clock": {
+    "format": "<span color='#80aa9e'>{:%b %d </span><span weight='600'>%I:%M}</span>",
+    "tooltip": false
+},
+
+  "group/net-volume": {
+    "orientation": "horizontal",
+    "modules": [
+      "network",
+      "pulseaudio"
+    ]
+  },
+
+  "network": {
+    "on-click": "sh -c 'eww close overlay panel || eww open-many overlay panel'",
+    "format-wifi": "{icon}",
+    "format-icons": ["", "", ""],
+    "tooltip": false,
+    "format-disconnected": ""
+  },
+
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-muted": "<span color='#e78a4e'></span>",
+    "format-bluetooth-muted": "<span color='#e78a4e'></span>",
+    "tooltip": false,
+    "on-click": "sh -c 'eww close overlay panel || eww open-many overlay panel'",
+    "format-icons": {
+      "default": [
+        "<span color='#e78a4e'></span>",
+        "<span color='#e78a4e'></span>",
+        "<span color='#e78a4e'></span>",
+        "<span color='#e78a4e'></span>"
+      ]
+    }
+  }
+}

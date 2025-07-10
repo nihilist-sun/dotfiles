@@ -1,0 +1,59 @@
+.spotify-container {
+  background-color: #1d2021;
+  border-radius: 8px;
+  margin: 16px 0 8px 0;
+}
+
+.spotify-art {
+  min-height: 116px;
+  min-width: 116px;
+  border-radius: 4px;
+  background-size: cover;
+  background-position: center;
+  margin: 8px 0 8px 8px;
+}
+
+.spotify-info {
+  color: #d4be98;
+  margin: 0 -192px 24px 12px;
+}
+
+.spotify-title {
+  color: #fbf1c7;
+  font-weight: 600;
+} 
+
+.spotify-controls {
+  background-color: transparent;
+  border-radius: 4px;
+  margin-left: 76px;
+}
+
+.spotify-controls button {
+  font-size: 16px;
+  padding: 8px;
+}
+
+.spotify-controls button:hover {
+  background-color: transparent;
+  color: #a9b665;
+  border-radius: 4px;
+}
+
+.spotify-play-pause,.spotify-prev,.spotify-next {
+  color: #d4be98;
+}
+
+.spotify-shuffle {
+  color: #504945;
+}
+
+.spotify-shuffle.active {
+  color: #a9b665;
+}
+
+.spotify-timeline {
+  font-size: 12px;
+  color: #d4be98;
+  margin: -40px -132px 0 0;
+}

@@ -1,0 +1,43 @@
+(include "modules/variables.yuck")
+(include "modules/toggles.yuck")
+(include "modules/spotify.yuck")
+(include "modules/volume.yuck")
+(include "modules/weather.yuck")
+(include "modules/clock.yuck")
+
+(defwindow panel
+  :monitor 0
+  :windowtype "dock"
+  :keep-alive true
+  :namespace "eww"
+  :geometry (geometry
+              :anchor "top right"
+              :x "16px"
+              :y "16px")
+  (box
+    :class "panel-container"
+    :orientation "v"
+    :space-evenly false
+    (clock)
+    (toggles)
+    (weather)
+    (spotify)
+    (volume)
+  )
+)
+
+(defwindow overlay
+  :monitor 0
+  :windowtype "normal"
+  :geometry (geometry
+              :width "100%"
+              :height "100%")              
+  (eventbox
+    :class "overlay"
+    :onclick "eww close overlay panel"    
+    (box
+      :width "100%"
+      :height "100%"
+    )
+  )
+)

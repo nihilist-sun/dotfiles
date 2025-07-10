@@ -1,0 +1,28 @@
+(defwidget volume []
+  (box
+    :class        "volume-container"
+    :orientation  "h"
+    :space-evenly false
+    :spacing      8
+    (button
+      :class   "volume-icon"
+      :onclick "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+      (label
+        :text {
+          volume_muted == "yes"  ? "":
+          volume_level <= 24     ? "":
+          volume_level <= 49     ? "":
+          volume_level <= 74     ? "":
+                                   ""
+        }
+      )
+    )
+    (scale
+      :class    "volume-slider"
+      :value    volume_level
+      :onchange "pactl set-sink-volume @DEFAULT_SINK@ {}%"
+      :min      0
+      :max      100
+    )
+  )
+)

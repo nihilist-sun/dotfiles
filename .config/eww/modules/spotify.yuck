@@ -1,0 +1,67 @@
+(defwidget spotify []
+  (box
+    :class "spotify-container"
+    ;; Show only if spotify is running (non-empty string)
+    :visible {(spotify_running != "")}
+    (box
+      :class "spotify-widget"
+      :orientation "h"
+      :space-evenly false
+      (box
+        :class "spotify-art"
+        :style "background-image: url('${spotify_artUrl}');"
+      )        
+      (box
+        :class "spotify-info"
+        :orientation "v"
+        :valign "center"
+        (label
+          :class "spotify-timeline"
+          :text spotify_timeline
+        )
+        (label
+          :class "spotify-title"
+          :text spotify_title
+          :halign "start"
+          :wrap false
+          :limit-width 25
+          :show-truncated true
+        )
+        (label
+          :class "spotify-artist"
+          :text spotify_artist
+          :halign "start"
+          :wrap false
+          :limit-width 20
+          :show-truncated true
+        )
+      )        
+      (box
+        :class "spotify-controls"
+        :orientation "h"
+        :valign "end"
+        :space-evenly true
+        (button
+          :class {(spotify_shuffle == "On") ? "spotify-shuffle active" : "spotify-shuffle"}
+          :onclick "playerctl -p spotify shuffle toggle"
+          ""
+        )
+        (button
+          :class "spotify-prev"
+          :onclick "playerctl -p spotify previous"
+          ""
+        )
+        (button
+          :class   "spotify-play-pause"
+          :onclick "playerctl -p spotify play-pause"
+          "${spotify_status == 'Playing' ? '' : ''}"
+        )
+        (button
+          :class "spotify-next"
+          :onclick "playerctl -p spotify next"
+          ""
+        )
+      )
+    )
+  )
+)

@@ -1,0 +1,114 @@
+* {
+    font-family: "SF Pro Rounded", "Font Awesome 6 Pro Solid";
+    font-size: 1rem;
+}
+
+window#waybar {
+    background: #141617;
+    color: #fbf1c7;
+}
+
+#waybar.empty #window {
+    background: transparent;
+}
+
+#window {
+    background: transparent;
+}
+
+#clock,
+#cpu,
+#memory,
+#pulseaudio,
+#temperature,
+#battery,
+#custom-notification,
+#custom-media,
+#workspaces,
+#custom-power,
+#custom-menu,
+#net-volume {
+    background: #1d2021;
+    border-radius: 8px;
+    margin: 8px 0;
+}
+
+#net-volume {
+    padding: 0 12px;
+}
+
+#network {
+    margin-right: 8px;
+    color: #89b482;
+}
+
+#cpu, #memory {
+    background: transparent;
+    padding-right: 8px;
+}
+
+#clock {
+    padding: 0 12px;
+}
+
+#workspaces {
+    padding: 0 8px;
+}
+
+#tray {
+    background: transparent;
+    padding: 0 16px 0 8px;
+}
+
+#window {
+    padding: 0 12px;
+}
+
+#custom-power {
+    border-radius: 100px;
+    padding: 0 8px;
+}
+
+#custom-media {
+    background: transparent;
+}
+
+#custom-menu {
+    background: transparent;
+    padding: 0 8px;
+}
+
+#workspaces button {
+    background: transparent;
+    color: #504945;
+    padding: 0 4px;
+    margin: 0;
+    min-width: 0;
+    border: none;
+    box-shadow: none;
+}
+#workspaces button.focused {
+    color: #b0b846;
+}
+#workspaces button:hover {
+    background: transparent;
+    box-shadow: none;
+    color: #d3869b;
+}
+
+.modules-left {
+    margin-left: 8px;
+}
+.modules-right {
+    margin-right: 8px;
+}
+
+#network:hover,
+#temperature:hover,
+#battery:hover,
+#custom-notification:hover,
+#custom-power:hover,
+#custom-media:hover {
+    background: transparent;
+    transition: background 0.2s ease;
+}
