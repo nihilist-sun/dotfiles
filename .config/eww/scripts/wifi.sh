@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Signal strength from env or fallback
 signal="${1:-100}"
