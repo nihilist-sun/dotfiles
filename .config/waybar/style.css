@@ -20,12 +20,8 @@ window#waybar {
 #cpu,
 #memory,
 #pulseaudio,
-#temperature,
-#battery,
-#custom-notification,
 #custom-media,
 #workspaces,
-#custom-power,
 #custom-menu,
 #net-volume {
     background: #1d2021;
@@ -64,11 +60,6 @@ window#waybar {
     padding: 0 12px;
 }
 
-#custom-power {
-    border-radius: 100px;
-    padding: 0 8px;
-}
-
 #custom-media {
     background: transparent;
 }
@@ -101,14 +92,4 @@ window#waybar {
 }
 .modules-right {
     margin-right: 8px;
-}
-
-#network:hover,
-#temperature:hover,
-#battery:hover,
-#custom-notification:hover,
-#custom-power:hover,
-#custom-media:hover {
-    background: transparent;
-    transition: background 0.2s ease;
 }
