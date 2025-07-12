@@ -48,8 +48,7 @@
   "format-icons": {
   "default": "<span font='Font Awesome 6 Pro Regular'></span>",
   "active": "<span font='Font Awesome 6 Pro Solid'></span>"
-  },
-  "on-click": "activate"
+  }
 },
 
   "cpu": {
