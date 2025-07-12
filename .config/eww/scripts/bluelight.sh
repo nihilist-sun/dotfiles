@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 STATUS_FILE="/tmp/gammastep-active"
 
 toggle_filter() {
