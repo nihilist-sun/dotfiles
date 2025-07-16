@@ -38,6 +38,10 @@ window#waybar {
     color: #89b482;
 }
 
+#pulseaudio {
+    color: #89b482;
+}
+
 #cpu, #memory {
     background: transparent;
     padding-right: 8px;
@@ -66,6 +70,7 @@ window#waybar {
 
 #custom-menu {
     background: transparent;
+    color: #80aa9e;
     padding: 0 8px;
 }
 

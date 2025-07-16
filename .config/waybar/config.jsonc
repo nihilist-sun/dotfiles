@@ -33,10 +33,10 @@
   },
 
   "custom/menu": {
-    "format": "<span color='#80aa9e'></span>",
+    "format": "",
     "on-click": "fuzzel --config ~/.config/fuzzel/fuzzel-alt.ini",
     "tooltip": false
-  }, 
+  },
 
   "niri/window": {
     "format": "<span weight='600'>{}</span>",
@@ -49,7 +49,7 @@
   "default": "<span font='Font Awesome 6 Pro Regular'></span>",
   "active": "<span font='Font Awesome 6 Pro Solid'></span>"
   }
-},
+  },
 
   "cpu": {
     "format": "{icon} {usage}%",
@@ -79,10 +79,10 @@
     "spacing": 16
   },
   
-"clock": {
-    "format": "<span color='#80aa9e'>{:%b %d </span><span weight='600'>%I:%M}</span>",
-    "tooltip": false
-},
+  "clock": {
+      "format": "<span color='#80aa9e'>{:%b %d </span><span weight='600'>%I:%M}</span>",
+      "tooltip": false
+  },
 
   "group/net-volume": {
     "orientation": "horizontal",
@@ -102,16 +102,16 @@
 
   "pulseaudio": {
     "format": "{icon}",
-    "format-muted": "<span color='#e78a4e'></span>",
-    "format-bluetooth-muted": "<span color='#e78a4e'></span>",
+    "format-muted": "",
+    "format-bluetooth-muted": "",
     "tooltip": false,
     "on-click": "sh -c 'eww close overlay panel || eww open-many overlay panel'",
     "format-icons": {
       "default": [
-        "<span color='#e78a4e'></span>",
-        "<span color='#e78a4e'></span>",
-        "<span color='#e78a4e'></span>",
-        "<span color='#e78a4e'></span>"
+        "",
+        "",
+        "",
+        ""
       ]
     }
   }
