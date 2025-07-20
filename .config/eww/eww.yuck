@@ -8,7 +8,6 @@
 (defwindow panel
   :monitor 0
   :windowtype "dock"
-  :keep-alive true
   :namespace "eww"
   :geometry (geometry
               :anchor "top right"
